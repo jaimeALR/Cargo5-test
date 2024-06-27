@@ -1,15 +1,16 @@
 <template>
     <div class="flex items-center justify-center">
         <div class=" border border-gray-300 rounded my-10 bg-white">
-            <Disclosure as="nav" class=" flex items-center" v-slot="{ open }">
+            <Disclosure as="nav" class=" flex items-center">
                 <div class="max-w-4xl sm:px-6 lg:px-2">
                     <div class="relative flex h-11 items-center justify-start">
                         <div class="flex flex-1 items-start justify-start sm:items-stretch sm:justify-start">
                             <div class="hidden sm:block">
                                 <div class="flex space-x-2">
                                     <a v-for="item in navigation" :key="item.name" :href="item.href"
-                                        :class="[item.current ? 'bg-blue-100 bg-opacity-80 transition duration-200 text-blue-900' : 'text-gray-900 hover:bg-blue-100 bg-opacity-40 transition duration-200 hover:text-blue-900', 'rounded-md px-3 py-1 text-base font-medium']"
-                                        :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+                                        :class="[item.current ? 'bg-blue-100 bg-opacity-80 transition duration-200 text-blue-900' : 'text-gray-900 hover:bg-blue-100 bg-opacity-40 transition duration-200 hover:text-blue-900', 'rounded-md px-2 py-1 text-lg font-medium']"
+                                        :aria-current="item.current ? 'page' : undefined">{{ item.name }}
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -57,9 +58,7 @@
 
 <script setup lang="ts">
 
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { Disclosure } from '@headlessui/vue'
 
 const navigation = [
     { name: 'Quote summary', href: '#', current: true },

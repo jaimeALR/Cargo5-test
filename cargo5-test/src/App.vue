@@ -12,7 +12,7 @@ const countries = ref<Country[]>([]);
 
 
 
-async function getContacts() {
+async function getOwners() {
   const token = await authenticate();
   const axiosInstance = await getAxiosInstance();
   const response = await axiosInstance.get('https://coreapp.cargofive.com/api/v1/front/owners', {
@@ -24,17 +24,9 @@ async function getContacts() {
 
   console.log(response.data);
 }
-
-
-
-
-const filterCountries = () => {
-  console.log('searching')
-}
-
 onMounted(() => {
   
-  getContacts();
+  getOwners();
 });
 </script>
 
