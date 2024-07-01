@@ -56,8 +56,16 @@
               <div
                 class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
               >
-                <select class="w-full">
-                  <option>Andrés Ramírez</option>
+                <select v-model="selectedOwner"
+                  :class="{
+                    'text-gray-500 w-full': !selectedOwner,
+                    'text-gray-950 w-full': selectedOwner,
+                  }">
+                  <option selected disabled value="">Name</option>
+                  <option class="text-gray-950" >Andrés Ramírez</option>
+                  <option class="text-gray-950">Fabio Valentin</option>
+                  <option class="text-gray-950">James Brown</option>
+                  <option class="text-gray-950">Messi 10</option>
                 </select>
               </div>
             </div>
@@ -68,8 +76,15 @@
               <div
                 class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
               >
-                <select class="w-full">
-                  <option>Company whom it...</option>
+                <select v-model="selectedCompany"
+                  :class="{
+                    'text-gray-500 w-full': !selectedCompany,
+                    'text-gray-950 w-full': selectedCompany,
+                  }">
+                  <option  selected disabled value="">Company whom it...</option>
+                  <option class="text-gray-950">Evergreen</option>
+                  <option class="text-gray-950">CMA CGM</option>
+                  <option class="text-gray-950">Maerks</option>
                 </select>
               </div>
             </div>
@@ -81,8 +96,15 @@
               <div
                 class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
               >
-                <select class="w-full">
-                  <option>Whom it may conc...</option>
+                <select v-model="selectedCargo"
+                  :class="{
+                    'text-gray-500 w-full': !selectedCargo,
+                    'text-gray-950 w-full': selectedCargo,
+                  }">
+                  <option  selected disabled value="">Whom it may conc...</option>
+                  <option class="text-gray-950" >CEO</option>
+                  <option class="text-gray-950">CTO</option>
+                  <option class="text-gray-950">Administrative</option>
                 </select>
               </div>
             </div>
@@ -93,7 +115,8 @@
                 class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
               >
                 <select class="w-full">
-                  <option>Select company first</option>
+                  <option disabled selected>Select company first</option>
+                  
                 </select>
               </div>
             </div>
@@ -110,19 +133,34 @@
               <div
                 class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
               >
-                <input type="date" class="w-full bg-transparent outline-none" />
+                <input type="date" v-model="selectedDate" :class="{
+                    'text-gray-500 w-full bg-transparent outline-none': !selectedDate,
+                    'text-gray-950 w-full bg-transparent outline-none': selectedDate,
+                  }" />
               </div>
             </div>
+            
             <!-- Incoterm -->
             <div class="flex flex-col">
               <label class="font-roboto text-gray-600 text-lg">Incoterm</label>
               <div
                 class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
               >
-                <select class="w-full">
-                  <option>EXW</option>
-                  <option>FOB</option>
-                  <option>CIF</option>
+                <select
+                  v-model="selectedIncoterms"
+                  :class="{
+                    'text-gray-500 w-full': !selectedIncoterms,
+                    'text-gray-950 w-full': selectedIncoterms,
+                  }"
+                >
+                  <option selected value="">Select Incoterm</option>
+                  <option
+                    v-for="incoterm in incoterms"
+                    :key="incoterm?.id"
+                    class="text-gray-950"
+                  >
+                    {{ incoterm?.name }}
+                  </option>
                 </select>
               </div>
             </div>
@@ -137,7 +175,7 @@
                 <input
                   type="text"
                   class="w-full bg-transparent outline-none"
-                  placeholder="Enter conditions"
+                  placeholder="Enter your payments..."
                 />
               </div>
             </div>
@@ -147,21 +185,23 @@
               <div
                 class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
               >
-                <select v-model="selectedLanguage" class="w-full">
-                  <option disabled value="Select a language">
-                    Select a language
-                  </option>
+                <select
+                  v-model="selectedLanguage"
+                  :class="{
+                    'text-gray-500 w-full': !selectedLanguage,
+                    'text-gray-950 w-full': selectedLanguage,
+                  }"
+                >
+                  <option disabled value="" selected>Select a language</option>
                   <option
                     v-for="language in languages"
-                    key="language.data.id"
-                    :value="language.data.name"
+                    :key="language.id"
+                    class="text-gray-950"
                   >
-                    {{ language.data.name }}
+                    {{ language.name }}
                   </option>
                 </select>
               </div>
-
-              <div v-if="loading" class="text-gray-500">Loading...</div>
             </div>
           </div>
         </div>
@@ -172,15 +212,25 @@
 
 <script setup lang="ts">
 import { Languages } from "../../models/languages.model";
+import { Incoterms } from "../../models/incoterms.model";
+
 import { ref, onMounted } from "vue";
 import { fetchAllData } from "../../utils/api";
 
+const incoterms = ref<Incoterms[]>([]);
 const languages = ref<Languages[]>([]);
-const selectedLanguage = ref<any>(null);
-const incoterms = ref([]);
-const owners = ref([]);
-const clients = ref([]);
-const kind_of_cargo = ref([]);
+/* Use selectedValue to get the value of the input/dropBox */
+const selectedLanguage = ref<string | null>("");
+const selectedIncoterms = ref<string | null>("");
+const selectedOwner = ref<string | null>("");
+const selectedCargo = ref<string | null>("");
+const selectedDate = ref<string | null>("");
+const paymentConditionValue = ref<string | null>("");
+const selectedCompany = ref<string | null>('');
+
+// const owners = ref([]);
+// const clients = ref([]);
+// const kind_of_cargo = ref([]);
 /* const contacts = ref([]); */
 const loading = ref(false);
 
@@ -188,19 +238,19 @@ onMounted(async () => {
   loading.value = true;
   try {
     const data = await fetchAllData();
-    languages.value = data.languages;
-    incoterms.value = data.incoterms;
-    owners.value = data.owners;
-    clients.value = data.clients;
-    kind_of_cargo.value = data.kind_of_cargo;
-    /*     contacts.value = data.contacts; */
+    languages.value = data.languages.data;
+    incoterms.value = data.incoterms.data;
+    /* TODO get info API */
+    // owners.value = data.owners;
+    // clients.value = data.clients;
+    // kind_of_cargo.value = data.kind_of_cargo;
+    /* contacts.value = data.contacts; */
   } catch (err) {
     console.error("Error fetching data:", err);
   } finally {
     loading.value = false;
   }
 });
-console.log(languages);
 </script>
 
 <style>

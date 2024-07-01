@@ -77,22 +77,24 @@ export async function getLanguages() {
 /* Organize the data in constants */
 
 export async function fetchAllData() {
+    try {
+        const [languages, incoterms, /* owners, clients, kind_of_cargo */] = await Promise.all([
+           // getOwners(),
+           // getContacts(),
+           // getKindOfCargo(),
+           getLanguages(),
+            getIncoterms(),
+           
+        ]);
 
-    const [languages, incoterms, owners, clients, kind_of_cargo, /* contacts */] = await Promise.all([
-        getOwners(),
-        getContacts(),
-        getKindOfCargo(),
-        getIncoterms(),
-        getLanguages(),
-       /*  getCompanies(client) */
-    ]);
-
-    return {
-        languages: languages.data,
-        incoterms: incoterms.data,
-        owners: owners.data,
-        clients: clients.data,
-        kind_of_cargo: kind_of_cargo.data,
-        /* contacts: contacts.data */
-    };
+        return {
+            languages: languages.data,
+            incoterms: incoterms.data,
+          /*   owners: owners.data,
+            clients: clients.data,
+            kind_of_cargo: kind_of_cargo.data, */
+        };
+    } catch (error: any) {
+        throw new Error(`Error fetching data: ${error.message}`);
+    }
 }
