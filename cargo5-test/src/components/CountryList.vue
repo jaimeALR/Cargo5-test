@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Country } from "../models/country.model";
+import { Country } from "../models/languages.model";
 import CountryItem from './CountryItem.vue'
 
 interface Props {

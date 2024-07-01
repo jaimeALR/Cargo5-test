@@ -1,0 +1,43 @@
+<svg
+              class="w-8 h-8 mr-1"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="-87.67 -87.67 441.00 441.00"
+              xml:space="preserve"
+              fill="#ffffff"
+              stroke="#ffffff"
+              stroke-width="20.18978"
+            >
+              <g
+                id="SVGRepo_bgCarrier"
+                stroke-width="0"
+                transform="translate(34.53515,34.53515), scale(0.74)"
+              >
+                <rect
+                  x="-87.67"
+                  y="-87.67"
+                  width="441.00"
+                  height="441.00"
+                  rx="0"
+                  fill="#79767a"
+                  strokewidth="0"
+                ></rect>
+              </g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke="#CCCCCC"
+                stroke-width="0.53131"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <path
+                    style="fill: #ffffff"
+                    d="M252.938,0.003H132.822H12.717C5.695,0.003,0,5.697,0,12.714v120.111v120.116 c0,7.022,5.695,12.711,12.717,12.711h120.105h120.116c7.022,0,12.717-5.695,12.717-12.711V132.825V12.714 C265.655,5.697,259.96,0.003,252.938,0.003z M240.233,120.114h-94.694V25.425h94.694V120.114z M25.422,25.425h94.694v94.683H25.422 V25.425z M25.422,145.536h94.694v94.694H25.422V145.536z M240.233,240.23h-94.694v-94.694h94.694V240.23z"
+                  ></path>
+                </g>
+              </g>
+            </svg>

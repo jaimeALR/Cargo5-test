@@ -1,111 +1,210 @@
 <template>
-    <div class="flex border-2 flex-col rounded-md border-gray-200 ">
-
-        <div class="flex p-3 border-b-2 justify-between items-center">
-            <div class="flex items-center">
-                <p class="text-gray-600 mx-2 text-xl">FCL</p>
-                <p class="font-bold  text-xl">Quote ID:</p>
-                <p class="font-bold px-1  text-xl">CA-2251 </p>
-                <a href="">
-                    <svg class="w-4 h-4 mx-2 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M14.7566 2.62145C16.5852 0.792851 19.55 0.792851 21.3786 2.62145C23.2072 4.45005 23.2072 7.41479 21.3786 9.24339L11.8933 18.7287C11.3514 19.2706 11.0323 19.5897 10.6774 19.8665C10.2592 20.1927 9.80655 20.4725 9.32766 20.7007C8.92136 20.8943 8.49334 21.037 7.76623 21.2793L4.43511 22.3897L3.63303 22.6571C2.98247 22.8739 2.26522 22.7046 1.78032 22.2197C1.29542 21.7348 1.1261 21.0175 1.34296 20.367L2.72068 16.2338C2.96303 15.5067 3.10568 15.0787 3.29932 14.6724C3.52755 14.1935 3.80727 13.7409 4.13354 13.3226C4.41035 12.9677 4.72939 12.6487 5.27137 12.1067L14.7566 2.62145ZM4.40051 20.8201L7.24203 19.8729C8.03314 19.6092 8.36927 19.4958 8.68233 19.3466C9.06287 19.1653 9.42252 18.943 9.75492 18.6837C10.0284 18.4704 10.2801 18.2205 10.8698 17.6308L18.4393 10.0614C17.6506 9.78321 16.6346 9.26763 15.6835 8.31651C14.7324 7.36538 14.2168 6.34939 13.9387 5.56075L6.36917 13.1302C5.77951 13.7199 5.52959 13.9716 5.3163 14.2451C5.05704 14.5775 4.83476 14.9371 4.65341 15.3177C4.50421 15.6307 4.3908 15.9669 4.12709 16.758L3.17992 19.5995L4.40051 20.8201ZM15.1554 4.34404C15.1896 4.519 15.2474 4.75684 15.3438 5.03487C15.561 5.66083 15.9712 6.48288 16.7442 7.25585C17.5171 8.02881 18.3392 8.43903 18.9651 8.6562C19.2432 8.75266 19.481 8.81046 19.656 8.84466L20.3179 8.18272C21.5607 6.93991 21.5607 4.92492 20.3179 3.68211C19.0751 2.4393 17.0601 2.4393 15.8173 3.68211L15.1554 4.34404Z"
-                                fill="#1C274C"></path>
-                        </g>
-                    </svg>
-                </a>
-                <div>
-                    <select
-                        class="font-roboto border-2 rounded-3xl text-gray-800 border-gray-200 bg-purple-200 bg-opacity-40 p-1 pr-5 "
-                        value="draft">
-                        <option>Draft</option>
-                    </select>
-                </div>
+  <div></div>
+  <div class="bg-gray-100 flex flex-col items-center">
+    <!-- Quote Summary Section -->
+    <div
+      class="w-full max-w-6xl bg-white border border-gray-300 rounded-xl p-6 shadow-md"
+    >
+      <div class="mb-4 border-b-2">
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex items-center">
+            <img src="../../assets/grid.svg" class="w-8 h-8 mr-3" alt="Grid" />
+            <p class="text-gray-600 text-xl mr-2">FCL</p>
+            <p class="text-xl font-bold">Quote ID:</p>
+            <p class="text-xl font-bold px-1">CA-2251</p>
+            <a href="">
+              <img
+                src="../../assets/edit-pen.svg"
+                class="w-4 h-4 mr-4 ml-1"
+                alt="Pen"
+              />
+            </a>
+            <div class="ml-2">
+              <select
+                class="font-roboto border-2 rounded-3xl text-gray-800 border-gray-200 bg-purple-200 bg-opacity-40 p-1 pr-5"
+              >
+                <option>Draft</option>
+              </select>
             </div>
-
-            <div class="flex  text-lg ">
-                <p class="text-gray-600 mx-2">1 USD = 1.1 EUR | 1 USD = 7,09 CNY</p>
-                <div class="flex items-center ">
-                    <button class="text-gray-700 font-semibold">Manage Currency</button>
-                    <a href="">
-                        <svg class="w-4 h-4 mx-2 mr-2" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M14.7566 2.62145C16.5852 0.792851 19.55 0.792851 21.3786 2.62145C23.2072 4.45005 23.2072 7.41479 21.3786 9.24339L11.8933 18.7287C11.3514 19.2706 11.0323 19.5897 10.6774 19.8665C10.2592 20.1927 9.80655 20.4725 9.32766 20.7007C8.92136 20.8943 8.49334 21.037 7.76623 21.2793L4.43511 22.3897L3.63303 22.6571C2.98247 22.8739 2.26522 22.7046 1.78032 22.2197C1.29542 21.7348 1.1261 21.0175 1.34296 20.367L2.72068 16.2338C2.96303 15.5067 3.10568 15.0787 3.29932 14.6724C3.52755 14.1935 3.80727 13.7409 4.13354 13.3226C4.41035 12.9677 4.72939 12.6487 5.27137 12.1067L14.7566 2.62145ZM4.40051 20.8201L7.24203 19.8729C8.03314 19.6092 8.36927 19.4958 8.68233 19.3466C9.06287 19.1653 9.42252 18.943 9.75492 18.6837C10.0284 18.4704 10.2801 18.2205 10.8698 17.6308L18.4393 10.0614C17.6506 9.78321 16.6346 9.26763 15.6835 8.31651C14.7324 7.36538 14.2168 6.34939 13.9387 5.56075L6.36917 13.1302C5.77951 13.7199 5.52959 13.9716 5.3163 14.2451C5.05704 14.5775 4.83476 14.9371 4.65341 15.3177C4.50421 15.6307 4.3908 15.9669 4.12709 16.758L3.17992 19.5995L4.40051 20.8201ZM15.1554 4.34404C15.1896 4.519 15.2474 4.75684 15.3438 5.03487C15.561 5.66083 15.9712 6.48288 16.7442 7.25585C17.5171 8.02881 18.3392 8.43903 18.9651 8.6562C19.2432 8.75266 19.481 8.81046 19.656 8.84466L20.3179 8.18272C21.5607 6.93991 21.5607 4.92492 20.3179 3.68211C19.0751 2.4393 17.0601 2.4393 15.8173 3.68211L15.1554 4.34404Z"
-                                    fill="#1C274C"></path>
-                            </g>
-                        </svg>
-                    </a>
-                </div>
-
-            </div>
+          </div>
+          <div class="flex items-center">
+            <p class="text-gray-600 text-lg mx-2">
+              1 USD = 1.1 EUR | 1 USD = 7.09 CNY
+            </p>
+            <button class="text-gray-700 font-semibold">Manage Currency</button>
+            <!-- SVG icon content -->
+            <a href="">
+              <img
+                src="../../assets/edit-pen.svg"
+                class="w-4 h-4 ml-2"
+                alt="Pen"
+              />
+            </a>
+          </div>
         </div>
-        <div class="flex flex-row">
+      </div>
 
-            <div class="flex flex-col mx-5">
-                <h2 class="flex font-roboto font-bold text-lg"> General</h2>
-                <div class="flex flex-wrap">
-                    <h2 class="flex font-roboto text-gray-600 text-lg"> Owner</h2>
-                    <div class="border-2 rounded-lg border-gray-200 p-2">
-                        <select v-model="selectedValue">
-                            <option v-for="option in options" :key="option.value" :value="option.value">
-                                {{ option.label }}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap">
-                    <h2 class="flex font-roboto text-gray-600 text-lg"> Owner</h2>
-                    <div class="border-2 rounded-lg border-gray-200 p-2">
-                        <select v-model="selectedValue">
-                            <option v-for="option in options" :key="option.value" :value="option.value">
-                                {{ option.label }}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap">
-                    <h2 class="flex font-roboto text-gray-600 text-lg"> Owner</h2>
-                    <div class="border-2 rounded-lg border-gray-200 p-2">
-                        <select v-model="selectedValue">
-                            <option v-for="option in options" :key="option.value" :value="option.value">
-                                {{ option.label }}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap">
-                    <h2 class="flex font-roboto text-gray-600 text-lg"> Owner</h2>
-                    <div class="border-2 rounded-lg border-gray-200 p-2">
-                        <select v-model="selectedValue">
-                            <option v-for="option in options" :key="option.value" :value="option.value">
-                                {{ option.label }}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-
+      <!-- Quote summary -->
+      <div class="flex flex-row gap-6">
+        <!-- General Section -->
+        <div class="w-full">
+          <h2 class="font-roboto font-bold text-lg mb-2">General</h2>
+          <div class="grid grid-cols-2 gap-6">
+            <!-- Owner -->
+            <div class="flex flex-col">
+              <label class="font-roboto text-gray-600 text-lg">Owner</label>
+              <div
+                class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
+              >
+                <select class="w-full">
+                  <option>Andrés Ramírez</option>
+                </select>
+              </div>
             </div>
 
-            <div class="flex">
-                <h2 class="flex font-roboto font-bold text-lg"> Details</h2>
+            <!-- Company -->
+            <div class="flex flex-col">
+              <label class="font-roboto text-gray-600 text-lg">Company</label>
+              <div
+                class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
+              >
+                <select class="w-full">
+                  <option>Company whom it...</option>
+                </select>
+              </div>
             </div>
-
+            <!-- Kind of cargo -->
+            <div class="flex flex-col">
+              <label class="font-roboto text-gray-600 text-lg"
+                >Kind of Cargo</label
+              >
+              <div
+                class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
+              >
+                <select class="w-full">
+                  <option>Whom it may conc...</option>
+                </select>
+              </div>
+            </div>
+            <!-- Contact -->
+            <div class="flex flex-col">
+              <label class="font-roboto text-gray-600 text-lg">Contact</label>
+              <div
+                class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
+              >
+                <select class="w-full">
+                  <option>Select company first</option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
 
+        <!-- Details Section -->
+        <div class="w-full">
+          <h2 class="font-roboto font-bold text-lg mb-2">Details</h2>
+          <div class="grid grid-cols-2 gap-6">
+            <!-- Validity (date picker) -->
+            <div class="flex flex-col">
+              <label class="font-roboto text-gray-600 text-lg">Validity</label>
+              <div
+                class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
+              >
+                <input type="date" class="w-full bg-transparent outline-none" />
+              </div>
+            </div>
+            <!-- Incoterm -->
+            <div class="flex flex-col">
+              <label class="font-roboto text-gray-600 text-lg">Incoterm</label>
+              <div
+                class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
+              >
+                <select class="w-full">
+                  <option>EXW</option>
+                  <option>FOB</option>
+                  <option>CIF</option>
+                </select>
+              </div>
+            </div>
+            <!-- Payment Conditions -->
+            <div class="flex flex-col">
+              <label class="font-roboto text-gray-600 text-lg"
+                >Payment Conditions</label
+              >
+              <div
+                class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
+              >
+                <input
+                  type="text"
+                  class="w-full bg-transparent outline-none"
+                  placeholder="Enter conditions"
+                />
+              </div>
+            </div>
+            <!-- Language -->
+            <div class="flex flex-col">
+              <label class="font-roboto text-gray-600 text-lg">Language</label>
+              <div
+                class="border-2 rounded-lg border-gray-200 p-2 flex items-center"
+              >
+                <select v-model="selectedLanguage" class="w-full">
+                  <option disabled value="Select a language">
+                    Select a language
+                  </option>
+                  <option
+                    v-for="language in languages"
+                    key="language.data.id"
+                    :value="language.data.name"
+                  >
+                    {{ language.data.name }}
+                  </option>
+                </select>
+              </div>
+
+              <div v-if="loading" class="text-gray-500">Loading...</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
+  </div>
 </template>
 
 <script setup lang="ts">
+import { Languages } from "../../models/languages.model";
+import { ref, onMounted } from "vue";
+import { fetchAllData } from "../../utils/api";
 
+const languages = ref<Languages[]>([]);
+const selectedLanguage = ref<any>(null);
+const incoterms = ref([]);
+const owners = ref([]);
+const clients = ref([]);
+const kind_of_cargo = ref([]);
+/* const contacts = ref([]); */
+const loading = ref(false);
+
+onMounted(async () => {
+  loading.value = true;
+  try {
+    const data = await fetchAllData();
+    languages.value = data.languages;
+    incoterms.value = data.incoterms;
+    owners.value = data.owners;
+    clients.value = data.clients;
+    kind_of_cargo.value = data.kind_of_cargo;
+    /*     contacts.value = data.contacts; */
+  } catch (err) {
+    console.error("Error fetching data:", err);
+  } finally {
+    loading.value = false;
+  }
+});
+console.log(languages);
 </script>
+
+<style>
+body {
+  font-family: "Roboto", sans-serif;
+}
+</style>

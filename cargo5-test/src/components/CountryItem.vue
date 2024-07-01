@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Country } from '../models/country.model';
+import { Country } from '../models/languages.model';
 
 
 interface Props {
