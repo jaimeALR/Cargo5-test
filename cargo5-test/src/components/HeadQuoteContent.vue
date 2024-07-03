@@ -1,8 +1,8 @@
 <template>
-  <div class="flex items-center justify-center max-w-5xl">
-    <div class="border border-gray-300 rounded my-10 bg-white relative">
-      <Disclosure as="nav" class="flex items-center relative">
-        <div class="max-w-4xl sm:px-6 lg:px-2">
+  <div class="flex items-center justify-center  max-w-5xl">
+    <div class="border border-gray-300 rounded-lg my-10 bg-white relative">
+      <Disclosure as="nav" class="flex items-center relative ">
+        <div class="max-w-4xl sm:px-6 lg:px-2 shadow-md rounded-lg">
           <div class="relative flex h-11 items-center justify-start">
             <div
               class="flex flex-1 items-start justify-start sm:items-stretch sm:justify-start"
@@ -15,7 +15,7 @@
                     :href="item.href"
                     :class="[
                       item.current
-                        ? 'bg-blue-100 bg-opacity-80 transition duration-200 text-blue-900'
+                        ? 'bg-blue-100 bg-opacity-80 transition duration-200 text-blue-800'
                         : 'text-gray-900 hover:bg-blue-100 bg-opacity-40 transition duration-200 hover:text-blue-900',
                       'rounded-md px-2 py-1 text-lg font-medium',
                     ]"
@@ -72,3 +72,4 @@ const navigation = [
   { name: "Totals", href: "#", current: false },
 ];
 </script>
+

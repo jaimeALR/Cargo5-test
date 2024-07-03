@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center">
     <!-- Outer Container for Quote Information -->
-    <div class="w-full max-w-6xl border-gray-300 shadow-md">
+    <div class="w-full max-w-6xl border-gray-300 shadow-md bg-gray-100">
 
       <!-- Departure and Arrival Information Section -->
       <div class="bg-blue-200 bg-opacity-60 border rounded-t-lg">
@@ -29,7 +29,7 @@
         </div>
       </div>
       <!-- Quote Info Card 1 -->
-      <div class="flex items-center max-w-6xl border-gray-300 border rounded shadow-md m-4">
+      <div class="flex items-center max-w-6xl border-gray-300 border rounded shadow-md m-3 bg-white">
         <img
           src="../../assets/points2.svg"
           class="w-3 h-4 ml-6 mr-9"
@@ -44,7 +44,7 @@
           <div class="flex items-center flex-end justify-evenly">
             <template v-for="(item, index) in items" :key="item.containerName">
               <div class="mr-4"> 
-                <div class="mt-10 flex flex-col items-end justify-end">
+                <div class="mt-7 flex flex-col items-end justify-end">
                   <div v-for="(row, rowIndex) in item.rows" :key="row.title" class="flex">
                     <span
                       :class="getTitleRowClass(row.title), 'font-medium'"
@@ -56,11 +56,11 @@
                 </div>
               </div>
               <div class="flex flex-col items-end mr-5">
-                <div class="font-bold text-xl text-gray-500 mt-3 mr-3">
+                <div class="font-bold text-xl text-gray-500 mt-2 mr-3">
                   {{ item.containerName }}
                 </div>
                 <div class="pl-3 ">
-                  <div class="text-gray-600 py-3 flex flex-col items-end justify-end">
+                  <div class="text-gray-600 pb-3 flex flex-col items-end justify-end">
                     <div
                       v-for="(row, rowIndex) in item.rows"
                       :key="row.title"
@@ -73,7 +73,7 @@
                 </div>
               </div>
             </template>
-            <span class="text-gray-600 font-medium flex mt-24 pt-2">USD</span>
+            <span class="text-gray-600 font-medium flex mt-20 pt-2">USD</span>
 
             <button
               class="flex items-center justify-between border-2 border-red-600 text-red-600 hover:text-red-700 font-roboto py-1 px-3 ml-10 mr-2 rounded focus:outline-none"
@@ -89,7 +89,7 @@
         </div>
       </div>
       <!-- Quote Info Card 2 -->
-      <div class="flex items-center max-w-6xl border-gray-300 border rounded shadow-md m-4">
+      <div class="flex items-center max-w-6xl border-gray-300 border rounded shadow-md m-3 bg-white">
         <img
           src="../../assets/points2.svg"
           class="w-3 h-4 ml-6 mr-10"
@@ -100,7 +100,7 @@
           <div class="flex items-center justify-evenly">
             <template v-for="item in items" :key="item.containerName">
               <div class="mr-5">
-                <div class="mt-10 flex flex-col items-end justify-end">
+                <div class="mt-7 flex flex-col items-end justify-end">
                   <div v-for="(row, rowIndex) in item.rows" :key="row.title" class="flex">
                     <span
                       :class="getTitleRowClass(row.title), 'font-medium'"
@@ -116,7 +116,7 @@
                   {{ item.containerName }}
                 </div>
                 <div class="pl-3 flex items-end">
-                  <div class="text-gray-600 py-3 flex flex-col items-end justify-end">
+                  <div class="text-gray-600 pb-3 flex flex-col items-end justify-end">
                     <div
                       v-for="(row, rowIndex) in item.rows"
                       :key="row.title"
@@ -129,7 +129,7 @@
                 </div>
               </div>
             </template>
-            <span class="text-gray-600 font-medium flex mt-24 pt-2">USD</span>
+            <span class="text-gray-600 font-medium flex mt-20 pt-3">USD</span>
             <!-- Delete Button -->
             <button
               class="flex items-center justify-between border-2 border-red-600 text-red-600 hover:text-red-700 font-roboto py-1 px-3 ml-10 mr-2 rounded focus:outline-none"
@@ -147,7 +147,7 @@
     </div>
   </div>
   <div class="flex flex-col items-center">
-    <div class="w-full max-w-6xl border-gray-300 shadow-md">
+    <div class="w-full max-w-6xl border-gray-300 shadow-md bg-gray-100">
       <!-- Departure and Arrival Information Section 2 -->
       <div class="bg-blue-200 bg-opacity-60 border rounded-t-lg">
         <div class="flex m-3 pl-1">
@@ -174,7 +174,7 @@
         </div>
       </div>
       <!-- Quote Info Card 3 -->
-      <div class="flex items-center max-w-6xl border-gray-300 border rounded shadow-md m-4">
+      <div class="flex items-center max-w-6xl border-gray-300 border rounded shadow-md m-3 bg-white">
         <img
           src="../../assets/points2.svg"
           class="w-3 h-4 ml-6 mr-6"
@@ -185,7 +185,7 @@
           <div class="flex items-center justify-evenly">
             <template v-for="item in items" :key="item.containerName">
               <div class="mr-4">
-                <div class="mt-10 flex flex-col items-end justify-end">
+                <div class="mt-7 flex flex-col items-end justify-end">
                   <div v-for="(row, rowIndex) in item.rows" :key="row.title" class="flex">
                     <span
                       :class="getTitleRowClass(row.title), 'font-medium'"
@@ -201,7 +201,7 @@
                   {{ item.containerName }}
                 </div>
                 <div class="pl-3 flex items-end">
-                  <div class="text-gray-600 py-3 flex flex-col items-end justify-end">
+                  <div class="text-gray-600 pb-3 flex flex-col items-end justify-end">
                     <div
                       v-for="(row, rowIndex) in item.rows"
                       :key="row.title"
@@ -214,7 +214,7 @@
                 </div>
               </div>
             </template>
-            <span class="text-gray-600 font-medium flex mt-24 pt-2">USD</span>
+            <span class="text-gray-600 font-medium flex mt-20 pt-3">USD</span>
             <!-- Delete button -->
             <button
               class="flex items-center justify-between border-2 border-red-600 text-red-600 hover:text-red-700 font-roboto py-1 px-3 ml-10 mr-2 rounded focus:outline-none"

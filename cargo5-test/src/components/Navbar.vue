@@ -2,9 +2,7 @@
   <Disclosure as="nav" class="bg-blue-900 flex items-center" v-slot="{ open }">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
-        <div
-          class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-        >
+        <div class="flex items-center flex-1 justify-center sm:justify-start">
           <div class="flex flex-shrink-0 items-center">
             <img
               id="logo"
@@ -40,9 +38,7 @@
         >
           <!-- Profile dropdown -->
           <Menu as="div" class="relative ml-3">
-            <div
-              class="pr-2 border-r-2 border-white text-white"
-            >
+            <div class="pr-2 border-r-2 border-white text-white">
               <MenuButton
                 class="flex items-center hover:text-white rounded-md px-1 py-1 text-sm font-roboto mr-1 transition duration-300 transform hover:-translate-y-1"
               >
@@ -70,6 +66,7 @@
                 <MenuItem v-slot="{ active }">
                   <a
                     href="#"
+                    @click.prevent="signOut"
                     :class="[
                       active ? 'bg-gray-100' : '',
                       'block px-4 py-2 text-sm text-gray-700',
@@ -90,6 +87,7 @@
                 <MenuItem v-slot="{ active }">
                   <a
                     href="#"
+                    @click.prevent="signOut"
                     :class="[
                       active ? 'bg-gray-100' : '',
                       'block px-4 py-2 text-sm text-gray-700',
@@ -105,9 +103,10 @@
             type="button"
             class="text-white p-2 transition duration-300 transform hover:-translate-y-1"
           >
-            <span class="absolute -inset-1.5" />
+            <span class="absolute -inset-1.5"></span>
             <span class="sr-only">View notifications</span>
-            <BellIcon class="h-6 w-6 ml-2" aria-hidden="true" />
+            <img src="../assets/notif-circle.svg" class="h-3 w-3 ml-8" />
+            <BellIcon class="h-6 w-6 ml-2 mb-3" aria-hidden="true" />
           </button>
         </div>
       </div>
@@ -122,15 +121,18 @@
 <script setup lang="ts">
 import {
   Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
   Menu,
   MenuButton,
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
+import { BellIcon } from "@heroicons/vue/24/outline";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 
+const isSigningOut = ref(false);
+
+// Navigation links
 const navigation = [
   { name: "Rates", href: "#", current: false },
   { name: "Quotes", href: "#", current: false },
@@ -140,4 +142,25 @@ const navigation = [
   { name: "Shipments", href: "#", current: false },
   { name: "Settings", href: "#", current: false },
 ];
+
+// Use router instance
+const router = useRouter();
+
+// Sign out function
+const signOut = async () => {
+  isSigningOut.value = true;
+
+  try {
+    // Simulate sign-out process
+    localStorage.removeItem("authToken"); // Remove the token from local storage
+    await new Promise((resolve) => setTimeout(resolve, 500)); // Simulate async operation
+    router.push({ name: "Login" }); // Redirect to the login page
+  } catch (error) {
+    console.error("Error during sign-out:", error);
+  } finally {
+    isSigningOut.value = false; // Reset loading state
+  }
+};
 </script>
+
+<style scoped></style>
