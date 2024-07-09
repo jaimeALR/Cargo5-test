@@ -9,7 +9,7 @@ export async function getOwners() {
     const token = await authenticate();
     const axiosInstance = await getAxiosInstance();
 
-    return axiosInstance.get(`${BASE_URL}/v1/front/owners`, {
+    return axiosInstance.get(`${BASE_URL}/owners`, {
         headers: {
             'Authorization': `Bearer ${token}`
         },
